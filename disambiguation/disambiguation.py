@@ -63,7 +63,7 @@ def linkEntity(namedEntityString):
     redirectLabelQuery="redirectLabel:\"" +cleaned + "\"^2000 " + " ".join(["redirectLabel:"+elt for elt in cleaned.split(" ")])
     try:
         result = s.raw_query(q="\
-  		(("+labelQuery+") OR ("+redirectLabelQuery+")) \
+        (("+labelQuery+") OR ("+redirectLabelQuery+")) \
                 AND _val_:inlinks^10 \
                 AND (schemaorgtype:Person^10 OR schemaorgtype:Place OR schemaorgtype:Organization)",
                 fq="schemaorgtype:Person OR schemaorgtype:Place OR schemaorgtype:Organization",
